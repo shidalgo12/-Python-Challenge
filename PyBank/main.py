@@ -4,41 +4,31 @@ import csv
 # Path to collect data from the PyBank folder
 budget_data = os.path.join('..', 'PyBank', 'budget_data.csv')
 
-# Define the function and have it accept the 'budget_data' as its sole parameter
-def print_finances(budget_data):
-    # Assign values to variables 
-    Date = str(budget_data[0])
-    Profit_Loss = int(budget_data[1])
-
 # Read in the CSV file
-with open(budget_data, 'r') as csvfile:
+with open(budget_data, 'r', newline="") as csvfile:
     # Split the data on commas
     csvreader = csv.reader(csvfile, delimiter=',')
-    header = next(csvreader)
-    Total = 0
-
+    header = next(csvfile)
+    
     #Calculate Total Months - COMPLETE
     data = list(csvreader)
     Total_Months = len(data)-0
-
-    #Calculate Total Profit/Loss  
-    #for row in csvreader:
-    #    = Total += Profit_Loss
-
-#Calculate Average Change
+    
+    #Calculate Total Profit/Loss
+    # for i in range(1,Total_Months):
+    # Total = int(data[i][1]) + int(data[i+1][1])
+    # Calculate Average Change
     for i in range(1,len(data)):
         # print(data[i])
-        current_total= int(data[i][1])
-        print(current_total)
-        previous_total = int(data[i-1][1])
-        print(data[i][0],current_total,previous_total, current_total-previous_total)
-        Monthly_Change = current_total-previous_total
-        Avg_Change = 
+        Current_Total= int(data[i][1])
+        # print(Current_Total)
+        Previous_Total = int(data[i-1][1])
+        #print(data[i][0],Current_Total,Previous_Total, Current_Total-Previous_Total)
+        Monthly_Change = Current_Total-Previous_Total
+        # Calculate Average Monthly Change
+        # Avg_Change = Sum of Monthly Change/Total_Months
+        # print(Avg_Change)
 
-    #Calculate Average Change in Profit/Loss per Month   
-        #PL_Change = Profit_Loss[i] - Profit_Loss[i-1]
-        #Avg_Change = PL_Change / Total_Months
-    
     #Calculate Greatest Increase in Profits by Date & Amount
         #Max_PL_Change = max(PL_Change)
         
@@ -48,17 +38,16 @@ with open(budget_data, 'r') as csvfile:
         #Min_PL_Change = min(PL_Change)
 
 #Print Financial Analysis - COMPLETE
-print("Financial Analysis")
-print("----------------------------")
+    print("Financial Analysis")
+    print("----------------------------")
 
 #Print Total Months - COMPLETE
-    #print(f"Total Months: {Total_Months}")
-print(f"Total Months: {Total_Months}")
+    print(f"Total Months: {Total_Months}")
 
 #Print Total Profit/Loss
-print(f"Total: {Grand_Total}")
-#Print Average Change
-print(f"Average Change: {Avg_Change}")
+# print(f"Total: {Total}")
+# #Print Average Change
+# print(f"Average Change: {Avg_Change}", round(Avg_Change,2))
 
 #Print Greatest Increase in Profits
     #print(f"Greatest Increase in Profits : {Date} {max_increase}"
