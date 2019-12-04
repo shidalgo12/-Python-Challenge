@@ -20,22 +20,23 @@ with open(poll_data, 'r', newline="") as csvfile:
     for row in data:
         Total_Voters = Total_Voters + 1
         Name = row[2]
-    
-    # Calculate Election Results
-    if Name not in Candidate_Name:
-        Candidate_Name.append(Name)
-    print(Candidate_Name)
-    #         Candidate_Counts[Name] = 0
-    #     Candidate_Counts[Name]= Candidate_Counts[Name] + 1
-    #     Percentage_of_Voters[Name] = float(round((Candidate_Counts[Name]/ Total_Voters) * 100 , 3))
 
-    #     if Name not in Candidate_Counts:
-    #         Candidate_Counts[Name] = 0
-    #     Candidate_Counts[Name]= Candidate_Counts[Name] + 1
-    #     Percentage_of_Voters[Name] = float(round((Candidate_Counts[Name]/ Total_Voters) * 100 , 3)) 
-    # # Identify Winner
-    #     if
-    #     # Winner = 
+        # Identify Individual Candidates
+        # if Name not in Candidate_Name:
+            # Candidate_Name.append(Name)
+    # print(*Candidate_Name)
+
+        # Calculate Election Results Per Candidate
+        if Name not in Candidate_Counts:
+            Candidate_Counts[Name] = 0
+        Candidate_Counts[Name]= Candidate_Counts[Name] + 1
+        Percentage_of_Voters[Name] = round(((Candidate_Counts[Name]/ Total_Voters) * 100),3)
+        # I want to only extract values and then zip candidate names, candidate counts & Percentage of Voters
+    
+        
+    # Identify Winner
+        # x = value in Candidate_Counts
+            # Winner = Name
 
     #Calculate Total # of Votes for Each Candidate
 #         if Name not in Candidate_Names dict = {}
@@ -58,15 +59,13 @@ print("-------------------------")
 #Print Total Voters
 print(f"Total Voters: {Total_Voters}")
 print("-------------------------")
-#Print Candidates and voter stats
-
-# # Iterate over key/value pairs in dict and print them
-# for key, value in student_score.items():
-#     print(key, ' : ', value)
-# print(Percentage_of_Voters)
-# print(Candidate_Counts)
+print(Percentage_of_Voters)
+    # Iterate over key/value pairs in dict and print them
+    # for key, value in Percentage_of_Voters.items():
+        # print(key, ' : ', value)
+print(Candidate_Counts)
 #print(f"{Candidate_Name} {Percentage_of_Voters} ({Voters_Per_Candidate})")
 print("-------------------------")
 # Print Winner
-# print(f"Winner: {Winner}")
+# print("Winner: ")
 print("-------------------------")
