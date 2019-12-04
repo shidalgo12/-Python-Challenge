@@ -12,6 +12,7 @@ with open(poll_data, 'r', newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     header = next(csvreader)
     data = list(csvreader)
+    Candidate_Name = []
     Candidate_Counts = {}
     Percentage_of_Voters = {}
     
@@ -21,11 +22,21 @@ with open(poll_data, 'r', newline="") as csvfile:
         Name = row[2]
     
     # Calculate Election Results
-        if Name not in Candidate_Counts:
-            Candidate_Counts[Name] = 0
-        Candidate_Counts[Name]= Candidate_Counts[Name] + 1
-        Percentage_of_Voters[Name] = round((Candidate_Counts[Name]/ Total_Voters*100),3) 
-                
+    if Name not in Candidate_Name:
+        Candidate_Name.append(Name)
+    print(Candidate_Name)
+    #         Candidate_Counts[Name] = 0
+    #     Candidate_Counts[Name]= Candidate_Counts[Name] + 1
+    #     Percentage_of_Voters[Name] = float(round((Candidate_Counts[Name]/ Total_Voters) * 100 , 3))
+
+    #     if Name not in Candidate_Counts:
+    #         Candidate_Counts[Name] = 0
+    #     Candidate_Counts[Name]= Candidate_Counts[Name] + 1
+    #     Percentage_of_Voters[Name] = float(round((Candidate_Counts[Name]/ Total_Voters) * 100 , 3)) 
+    # # Identify Winner
+    #     if
+    #     # Winner = 
+
     #Calculate Total # of Votes for Each Candidate
 #         if Name not in Candidate_Names dict = {}
 # for elem in data:
@@ -48,12 +59,14 @@ print("-------------------------")
 print(f"Total Voters: {Total_Voters}")
 print("-------------------------")
 #Print Candidates and voter stats
-print(Candidate_Counts)
-print(Percentage_of_Voters)
+
+# # Iterate over key/value pairs in dict and print them
+# for key, value in student_score.items():
+#     print(key, ' : ', value)
+# print(Percentage_of_Voters)
+# print(Candidate_Counts)
 #print(f"{Candidate_Name} {Percentage_of_Voters} ({Voters_Per_Candidate})")
 print("-------------------------")
-#Print Winner
-#print("Winner: ")
+# Print Winner
+# print(f"Winner: {Winner}")
 print("-------------------------")
-
-
