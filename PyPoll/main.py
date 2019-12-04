@@ -3,37 +3,41 @@ import csv
 
 # Path to collect data from the PyBank folder
 poll_data = os.path.join('..', 'PyPoll', 'election_data.csv')
+Total_Voters = 0
+Candidate_Counts = 0
 
 # Read in the CSV file
-with open(poll_data, 'r') as csvfile:
+with open(poll_data, 'r', newline="") as csvfile:
     # Split the data on commas
     csvreader = csv.reader(csvfile, delimiter=',')
     header = next(csvreader)
-    
-    #Calculate Total Voters - COMPLETE
-    #Voters = list(csvreader)
-    # Total_Voters = len(Voters)-0
-   
-    #Build a List of individual Candidates
-    Candidate_Names = []
+    data = list(csvreader)
     Candidate_Counts = {}
-    for row in csvreader:
+    Percentage_of_Voters = {}
+    
+    # Calculate Total Voters - COMPLETE
+    for row in data:
+        Total_Voters = Total_Voters + 1
         Name = row[2]
-        if Name not in Candidate_Names:
-            Candidate_Names.append(Name)
-            #Candidate_Counts = [Candidate_Names]=0
-
-    print(*Candidate_Names)
-
     
-    #for x in Candidate_Name:
-        #print(Candidate_Name)   
-    
+    # Calculate Election Results
+        if Name not in Candidate_Counts:
+            Candidate_Counts[Name] = 0
+        Candidate_Counts[Name]= Candidate_Counts[Name] + 1
+        Percentage_of_Voters[Name] = round((Candidate_Counts[Name]/ Total_Voters*100),3) 
+                
     #Calculate Total # of Votes for Each Candidate
-        #Voters_Per_Candidate =
+#         if Name not in Candidate_Names dict = {}
+# for elem in data:
+#   if elem[3] not in dict:
+#     dict[elem[3]] = 0
+#   dict[elem[3]] = dict[elem[3]] + 1for 
+        
+#         Candidate_Counts = [Candidate_Names] = 0
+#         # Voters_Per_Candidate =
     
     #  % of Votes for Each Candidate
-        # Percentage_of_Voters = Voters_Per_Candidate/Total_Voters * 100
+        # Percentage_of_Voters = Candidate_Counts/Total_Voters * 100
      
     #Identify the Winner of the Election
     
@@ -41,9 +45,11 @@ with open(poll_data, 'r') as csvfile:
 print("Election Results")
 print("-------------------------")
 #Print Total Voters
-# print(f"Total Voters: {Total_Voters}")
+print(f"Total Voters: {Total_Voters}")
 print("-------------------------")
 #Print Candidates and voter stats
+print(Candidate_Counts)
+print(Percentage_of_Voters)
 #print(f"{Candidate_Name} {Percentage_of_Voters} ({Voters_Per_Candidate})")
 print("-------------------------")
 #Print Winner

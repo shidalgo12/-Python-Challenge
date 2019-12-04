@@ -23,7 +23,7 @@ with open(budget_data, 'r', newline="") as csvfile:
     print(f"Total Months: {Total_Months}")
     
     # Calculate Total Profit/Loss
-        
+      #Stuck on how to sum up Profit/Losses through a loop  
     # Calculate Monthly Change
     for i in range(1,len(data)):
         Date = data[i][0]
@@ -38,18 +38,21 @@ with open(budget_data, 'r', newline="") as csvfile:
         # print(PL_Change)
         # Change = list(PL_Change)
         # print(Change)
+    
     # Calculate Average Change
+    
     # for j in range(0,len(Change)):   
         # Total_Change = Total_Change + int(Change[j],[1]) + int(Change[j+1],[1])
         # Avg_Change = int 
         # print(Avg_Change)
         # Calculate Average Monthly Change
-        # Avg_Change = 
-        # Sum of Monthly Change/Total_Months
+        # Avg_Change =  Sum of Monthly Change/Total_Months
         # print(Avg_Change)
+    
     # for row in data:
         # for i in range(1,Total_Months):
             # Total = Total + int(data[i+1][1])
+    
     # Calculate Total Profit/Loss
     # Total = (int(data[i][1]) + int(data[i+1][1]))
     # #Calculate Greatest Increase in Profits by Date & Amount
