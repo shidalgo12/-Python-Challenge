@@ -21,7 +21,12 @@ with open(budget_data, 'r', newline="") as csvfile:
     for row in data:
         Total_Months = Total_Months + 1
      
-    # Calculate Average Change
+    # Calculate Total Profit/Loss
+    for i in range(0,len(data)):
+        Profit_Loss = int(data[i][1])
+        Total_PL = Total_PL + Profit_Loss
+        
+     # Calculate Average Change
     for i in range(1,len(data)):
         Date = data[i][0]
         Current_Total= int(data[i][1])
@@ -39,10 +44,7 @@ with open(budget_data, 'r', newline="") as csvfile:
         elif Monthly_Change < Min_Change:
             Min_Change = Monthly_Change
             Min_Date = (Date)
-    # Calculate Total Profit/Loss
-    for i in range(0,len(data)):
-        Profit_Loss = int(data[i][1])
-        Total_PL = Total_PL + Profit_Loss
+
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {Total_Months}")

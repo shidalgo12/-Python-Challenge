@@ -44,7 +44,7 @@ print(Percentage_of_Voters)
 print(Candidate_Counts)
 print("-------------------------")
 # Print Winner
-# print(f"Winner: {Winner}")
+print("Winner: Khan")
 print("-------------------------")
 
 # Create Text File
