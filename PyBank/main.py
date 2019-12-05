@@ -41,8 +41,6 @@ with open(budget_data, 'r', newline="") as csvfile:
             Min_Change = Monthly_Change
             Min_Date = (Date)
 
-        
-#Print Financial Data
 print("Financial Analysis")
 print("----------------------------")
 print(f"Total Months: {Total_Months}")
@@ -50,3 +48,6 @@ print(f"Total: ${Total_PL}")
 print(f"Average Change: ${Average_Change}")
 print(f"Greatest Increase in Profits: {Max_Date} (${Max_Change})")
 print(f"Greatest Decrease in Profits: {Min_Date} (${Min_Change})")
+
+#Create Text File
+f= open("PyBank_Text_File","w")
