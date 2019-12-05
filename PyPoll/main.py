@@ -46,3 +46,6 @@ print("-------------------------")
 # Print Winner
 # print(f"Winner: {Winner}")
 print("-------------------------")
+
+# Create Text File
+f= open("PyPoll_Text_File","w")
