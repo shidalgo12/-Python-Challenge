@@ -2,7 +2,7 @@ import os
 import csv
 
 # Path to collect data from the PyBank folder
-poll_data = os.path.join('..', 'PyPoll', 'election_data.csv')
+poll_data = os.path.join('PyPoll', 'election_data.csv')
 Total_Voters = 0
 Candidate_Counts = 0
 
