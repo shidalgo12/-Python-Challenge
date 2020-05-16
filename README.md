@@ -12,6 +12,7 @@ CALCULATIONS:
 5.  The greatest decrease in losses (date and amount) over the entire period\
 
 OUTPUT:
+
  ![](Images/PyBank.png)
 
 
